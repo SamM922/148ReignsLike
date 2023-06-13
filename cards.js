@@ -1,64 +1,79 @@
 
 firstCard = {
-  prompt: "Isn't painting Wonderful???",
-  rightChoiceText: "I LOVE PAINTING",
+  prompt: "Welcome, new coach! What is your goal?",
+  rightChoiceText: "To win!",
   rightChoice: function(){
-    addResource("veggies", 20)
-      addPackToDeck("bumbling")
-    addToTopDeck("VanGoghHappy")
+    addResource("team", 20)
+      addPackToDeck("compete")
+      addPackToDeck("fans")
+    addToTopDeck("LetsWin")
     },
   
-  leftChoiceText: "PAINTING SUCKS", 
+  leftChoiceText: "To make money!", 
   leftChoice: function(){
-    addResource("meat", 20)
-      addPackToDeck("bumbling")
-    addToTopDeck("VanGoghBetrayed")
-    enemiesMade += 1;
+    addResource("money", 20)
+      addPackToDeck("finance")
+      addPackToDeck("fans")
+    addToTopDeck("MoneyTime")
   },
-  name: "Van Gogh",
+  name: "Assistant",
   resultText: "",
-  image: "./images/VanGosh.png",
+  image: "./images/assistant.jpg",
   priority: 1,
   pack : "none"
 }
 
 
 cardPool = {
-  "uniqueIDList" : ["VanGoghHappy", "VanGoghBetrayed"],
+  "uniqueIDList" : ["LetsWin", "MoneyTime", "Retired"],
   
-  "VanGoghHappy" : {
-    prompt: "Really? Let's be friends",
-    rightChoiceText: "Lol Okay",
-      rightChoice: function(){
-      addResource("veggies", 10)
-      },
-    leftChoiceText: "XD HAHA. . .No", 
-    leftChoice: function(){
-      addResource("meat", 20)
-      addToTopDeck("VanGoghBetrayed")
-    enemiesMade += 1;
+  "LetsWin" : {
+    prompt: "Me too! Let's go win the title!",
+    rightChoiceText: "Yeah!",
+    rightChoice: function(){
+      addResource("team", 5)
+      addResource("money", -5)
     },
-    name: "Van Gogh",
+    leftChoiceText: "Whoa now, maybe.", 
+    leftChoice: function(){
+      addResource("money", 5)
+      addResource("team", -5)
+    },
+    name: "Assistant",
     resultText: "",
-    image: "./images/VanGosh.png",
+    image: "./images/assistant.jpg",
     priority: 2,
     pack : "none"
   },
 
-
-  "VanGoghBetrayed": {
-    prompt: "To Heck with you",
-    rightChoiceText: ". . . ",
-      rightChoice: function(){
-      addResource("veggies", 20)
-      },
-    leftChoiceText: "Fine. . . ", 
-    leftChoice: function(){
-      addResource("meat", 100)
+  "MoneyTime": {
+    prompt: "Oh.. okay.",
+    rightChoiceText: "Get to work.",
+    rightChoice: function(){
+      addResource("team", -10)
     },
-    name: "Van Gogh",
+    leftChoiceText: "I want to win too!", 
+    leftChoice: function(){
+      addResource("team", 5)
+    },
+    name: "Assistant",
     resultText: "",
-    image: "./images/VanGosh.png",
+    image: "./images/assistant.jpg",
+    priority: 2,
+    pack : "none"
+  },
+
+  "Retired" : {
+    prompt: "I just heard about your retirement. Congrats on your career!",
+    rightChoiceText: "Thank you.",
+    rightChoice: function(){location.reload();
+    },
+    leftChoiceText: "I was the best, wasn't I?", 
+    leftChoice: function(){location.reload();
+    },
+    name: "Assistant",
+    resultText: "",
+    image: "./images/assistant.jpg",
     priority: 2,
     pack : "none"
   }

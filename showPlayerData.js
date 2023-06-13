@@ -4,7 +4,7 @@ enemiesMade = 0;
 function updatePlayerData(){
   
   
-let dataToShow = "ENEMIES MADE: "+ enemiesMade;
+let dataToShow = "";
 
 
 io.writeIntoElement(dataToShow,"playerData")

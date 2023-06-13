@@ -1,5 +1,5 @@
 body {
-  background-color: #beef;
+  background-color: rgb(119, 215, 124);
   
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -10,7 +10,7 @@ body {
 
 
 div {
-  background-color: #feebae;
+  background-color: #27b2ce;
   
 }
 
@@ -40,14 +40,14 @@ div {
 #cardName{
   padding: 10px;
   width: parent;
-  width:100%;
+  width:400px;
   height:50px;
   
 }
 #playerData{
   padding: 10px;
   width: parent;
-  width:100%;
+  width:400px;
   height:50px;
   
 }

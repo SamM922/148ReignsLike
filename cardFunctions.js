@@ -12,7 +12,9 @@ function addToTopDeck(card, fromPool=true){
   console.log(card)
 }
 function drawFromDeck(){
-  if (deck.length ==0) alert ("out of cards :(")
+  if (deck.length ==0){
+    addToTopDeck("Retired")
+  }
   return deck.pop();
 }
 function shuffleIntoDeck(card, fromPool=true){

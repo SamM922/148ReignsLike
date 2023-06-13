@@ -94,7 +94,7 @@ $( document ).ready( function(){
 
   activeCardObject = insertCardInfo(firstCard);
   
-  importCardData()
+  importCardData();
 
   activeCard = document.getElementById("activeCard");
   cardStack = document.getElementById("cardStack");

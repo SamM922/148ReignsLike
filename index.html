@@ -1,5 +1,5 @@
-<!DOCTYPEhtml><head>
-<title> Game Name</title>
+<!DOCTYPE html><head>
+<title>Simple Football Manager</title>
 
 
 <script src="jquery-1.11.2.min.js"></script>
@@ -60,11 +60,51 @@
 <!-- here is the URL for the google sheet for this project:  https://docs.google.com/spreadsheets/d/1y6r9WXb2a9FA0KxBa__Y3LriUq8_KHakMViJ2irY5D4/edit?usp=sharing -->
 <pre id="data" style="visibility:collapse; display: none">
 ID (unique)	prompt	rightChoiceText	rightChoice	leftChoiceText	leftChoice	name	resultText	image	priority	pack
-q	Do you have Nuts?	What?	addResource("meat", 20);addResource("veggies", -20)	What?	addResource("meat", -20);addResource("veggies", 20)	Dog		Squirrel.jpg	1	bumbling
-w	Hey a Person	What?	addResource("meat", 20);addResource("veggies", -20)	What?	addResource("meat", -20);addResource("veggies", 20)	Dog		Squirrel.png	2	bumbling
-e	Squeak	What?	addResource("meat", 20);addResource("veggies", -20)	What?	addResource("meat", -20);addResource("veggies", 20)	Dog		Squirrel.png	2	bumbling
-r	(Panicking)	What?	addResource("meat", 20);addResource("veggies", -20)	What?	addResource("meat", -20);addResource("veggies", 20)	Dog	Something Alarms Your	Squirrel.png	1	bumbling
-tr	woops	What?	addResource("meat", 20);addResource("veggies", -20)	What?	addResource("meat", -20);addResource("veggies", 20)	Dog		Squirrel.png	2	bumbling
+upset	The fans are upset about losing the last game.	We will improve	addResource("money", -10)	It was unlucky	addResource("fans", -10)	Assistant		assistant.jpg	2	fans
+invader	There was a pitch invasion! How should we deal with the offenders?	Scold the fans	addResource("fans", -15)	Add more security	addResource("money", -15)	Advisor		advisor.jpg	2	fans
+redCard	What do you think about the recent red card from your defender?	It was a bad call!	addResource("fans", 10)	It was our mistake	addResource("team", 10);addResource("fans", -10)	Press		press.jpg	2	fans
+goodWin	Well done on your last win! What's next?	Players deserve some rest	addResource("team", 10)	We will keep winning!	addResource("fans", 10)	Press		press.jpg	2	fans
+rivals	What do you think about your rival team?	We respect them.	addResource("team", 10);addResource("fans", -10)	They suck!	addResource("fans", 10);addResource("team", -10)	Press		press.jpg	2	fans
+seasonGoal	What is your goal for the season?	Win the league!	addResource("fans", 10);addResource("money", -10)	Show some promise	addResource("team", 10);addResource("fans", -10)	Press		press.jpg	2	fans
+heckle	A fan is heckling your players more than usual.	Let security deal with it	addResource("team", -10);addResource("fans", -15)	Confront the fan yourself	addResource("team", 10)	Assistant		assistant.jpg	2	fans
+fanVideo	Some fans made a video about the team! Should we promote it?	Yeah! It's great!	addResource("team", 10);addResource("money", -5)	Nah, people will see it anyways	addResource("fans", -10)	Advisor		advisor.jpg	2	fans
+ticketPrices	Fans think ticket prices are too high.	Too bad, we need the money.	addResource("money", 10);addResource("fans", -15)	Lower prices a bit.	addResource("money", -10);addResource("fans", 15)	Advisor		advisor.jpg	2	fans
+fansCrit	Some fans are criticizing one of our players a lot. What should we do?	Tell the player it's nothing.	addResource("team", -10)	Tell the player to take it to heart.	addResource("team", 10)	Assistant		assistant.jpg	2	fans
+fireworks	Opposing fans are setting off fireworks outside the hotel!	Call security	addResource("team", 10);addResource("money", -10)	Complain in the morning	addResource("team", -15)	Assistant		assistant.jpg	2	fans
+goalVar	There was a poor decision made on the goal that gave your team the win. Thoughts?	We won, who cares?	addResource("fans", 10);addResource("team", -10)	We didn't deserve it	addResource("team", 10);addResource("fans", -10)	Press		press.jpg	2	fans
+winStreak	Congrats on your recent win streak! How are you doing it?	The team is great!	addResource("team", 10)	Fans are a big help	addResource("fans", 10)	Press		press.jpg	2	fans
+fanChannel	Your fans are streaming our games for free. We're losing money!	They can watch	addResource("money", -10)	Stop them	addResource("fans", -15)	Advisor		advisor.jpg	2	fans
+injuryPress	How bad is the injury to your star player?	It's honestly bad but we'll be okay	addResource("fans", -10);addResource("team", 10)	We don't know yet	addResource("team", -10)	Press		press.jpg	2	fans
+contractsUp	Some of our player contracts are expiring. What should we do?	Only keep the important ones.	addResource("money", 10);addResource("team", -20)	Keep the team together.	addResource("money", -15);addResource("team", 15)	Advisor		advisor.jpg	2	finance
+tacticsCoach	Since you're focusing on money, we need a new tactics coach too.	Sure, let's do it.	addResource("money", -10);addResource("team", 15)	We don't need that.	addResource("team", -10)	Assistant		assistant.jpg	2	finance
+retiringPlayer	One of our players is retiring soon. How should we handle it?	Grand sendoff!	addResource("money", -10);addResource("fans", 10)	Keep it to the team.	addResource("team", 10);addResource("fans", -10)	Advisor		advisor.jpg	2	finance
+merchPrices	To get some more money for the team we could increase merchandice prices.	Good idea.	addResource("money", 15);addResource("fans", -10)	Fans would be mad	addResource("money", -5);addResource("fans", 5)	Advisor		advisor.jpg	2	finance
+playerSell	We have recieved a large sum of money for one of our players.	She's too important	addResource("team", 5)	Let's accept it	addResource("team", -15);addResource("fans", -10);addResource("money", 25)	Advisor		advisor.jpg	2	finance
+foodPrices	We got a new food supplier, the prices for food in the stadium could use an update.	It costs more, up the prices	addResource("fans", -10);addResource("money", 10)	Keep it the same	addResource("money", -10)	Advisor		advisor.jpg	2	finance
+dontSell	I heard you're thinking of selling our star midfielder. It would really hurt the team.	I won't	addResource("team", 10)	I have to, sorry.	addResource("money", 20);addResource("team", -15)	Captain		captain.jpg	2	finance
+capRequest	There's a new player I've found who I really think would fit the team, could we bring her in?	Sure it's worth it	addResource("team", 15);addResource("money", -10)	We don't have the money	addResource("team", -10)	Captain		captain.jpg	2	finance
+playerLeaving	A player is demanding to leave. What do we do?	Sell them	addResource("team", -15);addResource("money", 10)	Trade them	addResource("team", -10)	Advisor		advisor.jpg	2	finance
+fanProblems	The fans expect new exciting players. What should we do?	Buy new players	addResource("money", -20)	Stick with lineup	addResource("fans", -20)	Advisor		advisor.jpg	2	finance
+badBuy	Our last purchased player isn't fitting in. What should we do?	Try and re sell	addResource("money", -10);addResource("fans", -10)	Bench them for a while	addResource("team", -10);addResource("money", -10)	Advisor		advisor.jpg	2	finance
+notCoach	I don't feel like you're doing enough to coach the team. I have to do the tactics.	You're better at them	addResource("team", 5)	I'm busy	addResource("team", -10)	Assistant		assistant.jpg	2	finance
+stadium	Our stadium needs repairs, should we do additional renovation?	Yes, we should	addResource("money", -20);addResource("fans", 10)	No	addResource("money", -10)	Advisor		advisor.jpg	2	finance
+Taxes	It seems that the team paid their taxes wrong a couple years ago. But we thought we did it right?	Fight it	addResource("money", -20)	Pay what's asked	addResource("money", -10)	Advisor		advisor.jpg	2	finance
+fanSafely	Fans are bringing up safety concerns in the stands. How should we adress them?	Make a safety video	addResource("fans", -10)	Add railings in more spots	addResource("money", -10);addResource("fans", 10)	Advisor		advisor.jpg	2	finance
+payRise	Some players want a pay rise or else they will leave!	Pay them!	addResource("money", -20);addResource("team", 10)	We don't need them.	addResource("money", 15);addResource("team", -20)	Assistant		assistant.jpg	2	compete
+playBoring	The team needs to play in a boring way to win the next game.	Let's do it!	addResource("team", 10);addResource("fans", -10)	No, stay with the old tactics.	addResource("team", -10)	Captain		captain.jpg	2	compete
+trainingGround	The training facilities we have could use an upgrade, but it would be expensive.	It's worth it!	addResource("team", 20);addResource("money", -20)	What we have is good enough.	addResource("team", -5)	Assistant		assistant.jpg	2	compete
+newDefense	Our defense is really struggling. What should we do?	Let's get a new player.	addResource("fans", 15);addResource("money", -20)	Our players are good enough, change tactics.	addResource("team", 10)	Assistant		assistant.jpg	2	compete
+capBad	Hey coach. I'm sorry for playing so poorly. I feel like I'm letting the team down.	Your job is to lead.	addResource("team", -10);addResource("fans", -5)	Let's get extra training for you.	addResource("team", 10);addResource("money", -10)	Captain		captain.jpg	2	compete
+playerTrade	A trade offer has come in which would improve our attack. Should we accept?	Yeah we need goals!	addResource("team", 10);addResource("fans", 10)	No, let's not change the team	addResource("team", -10);addResource("fans", -10)	Assistant		assistant.jpg	2	compete
+moneyWork	I understand that you're the coach, but we need to do better managing our money.	Hire someone	addResource("money", 10)	Do it yourself	addResource("team", -10)	Advisor		advisor.jpg	2	compete
+styleChange	The way we play seems to have been figured out. But changing could lead to more problems.	Take the risk and change	addResource("team", 10)	Stick to what worked	addResource("fans", 10);addResource("team", -10)	Captain		captain.jpg	2	compete
+tactics	We need to change our tactics for our next game, the team we're facing is on a roll.	All out attack!	addResource("fans", 10)	Defense and passing	addResource("team", 10)	Assistant		assistant.jpg	2	compete
+bigGame	Big game coming up next. What's the plan?	We're gonna win!	addResource("fans", -10);addResource("team", -10)	Play our best	addResource("team", 10)	Press		press.jpg	2	compete
+badInjury	Our goalkeeper is out for a long time. We need a replacement.	Play the backup	addResource("team", -20)	Buy a new player	addResource("money", -20)	Assistant		assistant.jpg	2	compete
+goalDrought	Coach, our wingers need help. They can't get the ball to our strikers to score goals.	Change tactics	addResource("team", -10)	Change players	addResource("fans", -10)	Captain		captain.jpg	2	compete
+expectWin	Coach, you were expected to win this game but your team couldn't do it. What happened?	We were bad	addResource("team", -10);addResource("fans", -10)	Opponent did very well	addResource("fans", -10)	Press		press.jpg	2	compete
+injurySpell	Lots of players are getting hurt. What should we do to fix this?	Lay back on training	addResource("fans", -10);addResource("team", -10)	Hire better trainers	addResource("money", -15)	Assistant		assistant.jpg	2	compete
+restCap	I need a rest this week boss. I can't play my best.	It's okay, take a rest	addResource("fans", -10);addResource("team", 5)	You have to play	addResource("team", -15)	Captain		captain.jpg	2	compete
 
 </pre>
 
